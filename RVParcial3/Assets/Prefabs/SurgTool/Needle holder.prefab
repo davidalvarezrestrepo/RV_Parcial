@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6452518129304801739}
   - component: {fileID: 1449124545078537344}
   m_Layer: 0
-  m_Name: Needle holder DeBakey
+  m_Name: Needle holder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
