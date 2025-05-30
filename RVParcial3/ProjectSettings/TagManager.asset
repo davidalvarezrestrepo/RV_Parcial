@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Olla
   - Martillo
+  - ManoIzquierda
+  - ManoDerecha
   layers:
   - Default
   - TransparentFX

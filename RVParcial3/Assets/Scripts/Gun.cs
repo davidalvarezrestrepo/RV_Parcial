@@ -25,5 +25,6 @@ public class Gun : MonoBehaviour
     public void DejarDisparo()
     {
         //Espacio para efectos al dejar de disparar
+        Debug.Log("Disparandont");
     }
 }

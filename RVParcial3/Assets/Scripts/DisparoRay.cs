@@ -10,7 +10,7 @@ public class DisparoRay : MonoBehaviour
 
     public LineRenderer lineRenderer;
 
-    //public GameObject impact;
+    public GameObject shootFx, impact;
 
     public void Disparar()
     {
@@ -27,7 +27,9 @@ public class DisparoRay : MonoBehaviour
             lineRenderer.SetPosition(0, firePoint.position);
             lineRenderer.SetPosition(1, hit.point);
 
-            //Instantiate(impact, hit.point, Quaternion.identity);
+            Instantiate(impact, hit.point, Quaternion.identity);
+            
+            Instantiate(shootFx, firePoint.transform.position, firePoint.transform.rotation);
         }
         else
         {
