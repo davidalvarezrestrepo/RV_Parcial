@@ -6,8 +6,12 @@ using UnityEngine.UI;
 
 public class validarBandeja : MonoBehaviour
 {
-    public Button botonContinuar;
+    public float tiempoTotal = 120f; // 2 minutos
+    private float tiempoRestante;
+
     private HashSet<string> objetosEnBandeja = new HashSet<string>();
+
+    private bool tiempoFinalizado = false;
 
     // Lista de objetos lavables
     private readonly string[] objetosLavables = new string[]
@@ -26,30 +30,33 @@ public class validarBandeja : MonoBehaviour
 
     private void Start()
     {
-        botonContinuar.gameObject.SetActive(false);
+        tiempoRestante = tiempoTotal;
+    }
+
+    private void Update()
+    {
+        if (!tiempoFinalizado)
+        {
+            tiempoRestante -= Time.deltaTime;
+
+            // Puedes mostrar el tiempo en consola o UI
+            Debug.Log("Tiempo restante: " + Mathf.CeilToInt(tiempoRestante) + "s");
+
+            if (tiempoRestante <= 0f)
+            {
+                tiempoFinalizado = true;
+                EvaluarPuntaje();
+            }
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
         string nombreObjeto = other.gameObject.name;
 
-        // Si ya estaba registrado, no lo agregamos otra vez
         if (!objetosEnBandeja.Contains(nombreObjeto))
         {
             objetosEnBandeja.Add(nombreObjeto);
-            VerificarMostrarBoton();
-        }
-    }
-
-    private void VerificarMostrarBoton()
-    {
-        foreach (string obj in objetosEnBandeja)
-        {
-            if (EsObjetoEsperado(obj))
-            {
-                botonContinuar.gameObject.SetActive(true);
-                return;
-            }
         }
     }
 
@@ -80,16 +87,16 @@ public class validarBandeja : MonoBehaviour
 
                 if (componente != null && componente.estaLimpio)
                 {
-                    puntaje += 2f; //  Correcto y limpio
+                    puntaje += 2f;
                 }
                 else
                 {
-                    puntaje -= 1f; //  Correcto pero sucio
+                    puntaje -= 1f;
                 }
             }
             else
             {
-                puntaje -= 2f; //  No está en la bandeja
+                puntaje -= 2f;
             }
         }
 
@@ -98,11 +105,11 @@ public class validarBandeja : MonoBehaviour
         {
             if (encontrados.Contains(obj))
             {
-                puntaje += 1f; //  Correcto
+                puntaje += 1f;
             }
             else
             {
-                puntaje -= 1f; //  No está
+                puntaje -= 1f;
             }
         }
 
@@ -111,10 +118,11 @@ public class validarBandeja : MonoBehaviour
         {
             if (!EsObjetoEsperado(obj))
             {
-                puntaje -= 1.5f; //  Objeto que no pertenece a la lista
+                puntaje -= 1.5f;
             }
         }
 
+        Debug.Log("Tiempo terminado");
         Debug.Log(" Puntaje final: " + puntaje);
     }
 }
