@@ -3,30 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-
 public class validarBandeja : MonoBehaviour
 {
-    public float tiempoTotal = 120f; // 2 minutos
+    public float tiempoTotal = 120f;
     private float tiempoRestante;
+    public Text tiempo;
 
-    private HashSet<string> objetosEnBandeja = new HashSet<string>();
-
+    private HashSet<GameObject> objetosEnBandeja = new HashSet<GameObject>();
     private bool tiempoFinalizado = false;
 
-    // Lista de objetos lavables
-    private readonly string[] objetosLavables = new string[]
-    {
-        "bisturí con hoja 10", "pinza de disección", "Separador tipo Farabeuf",
-        "Pinza de Kocher curva", "Tijera de Mayo curva", "Tijera Potts-Smith curva grande",
-        "Tijera de Metzenbaum larga", "Separador tipo Separador Senn", "Copa de muestra",
-        "Aguja curva"
-    };
+    [Header("Referencias a objetos lavables")]
+    public GameObject[] objetosLavables;
 
-    // Lista de objetos no lavables
-    private readonly string[] objetosNoLavables = new string[]
-    {
-        "Gasas", "Hilo"
-    };
+    [Header("Referencias a objetos no lavables")]
+    public GameObject[] objetosNoLavables;
 
     private void Start()
     {
@@ -39,9 +29,6 @@ public class validarBandeja : MonoBehaviour
         {
             tiempoRestante -= Time.deltaTime;
 
-            // Puedes mostrar el tiempo en consola o UI
-            Debug.Log("Tiempo restante: " + Mathf.CeilToInt(tiempoRestante) + "s");
-
             if (tiempoRestante <= 0f)
             {
                 tiempoFinalizado = true;
@@ -52,21 +39,21 @@ public class validarBandeja : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        string nombreObjeto = other.gameObject.name;
+        GameObject objeto = other.gameObject;
 
-        if (!objetosEnBandeja.Contains(nombreObjeto))
+        if (!objetosEnBandeja.Contains(objeto))
         {
-            objetosEnBandeja.Add(nombreObjeto);
+            objetosEnBandeja.Add(objeto);
         }
     }
 
-    private bool EsObjetoEsperado(string nombre)
+    private bool EsObjetoEsperado(GameObject objeto)
     {
-        foreach (string obj in objetosLavables)
-            if (obj == nombre) return true;
+        foreach (GameObject obj in objetosLavables)
+            if (obj == objeto) return true;
 
-        foreach (string obj in objetosNoLavables)
-            if (obj == nombre) return true;
+        foreach (GameObject obj in objetosNoLavables)
+            if (obj == objeto) return true;
 
         return false;
     }
@@ -75,16 +62,18 @@ public class validarBandeja : MonoBehaviour
     {
         float puntaje = 0f;
 
-        HashSet<string> encontrados = new HashSet<string>(objetosEnBandeja);
+        Debug.Log(" Objetos en la bandeja:");
+        foreach (GameObject obj in objetosEnBandeja)
+        {
+            Debug.Log( obj.name);
+        }
 
         // Validar objetos lavables
-        foreach (string obj in objetosLavables)
+        foreach (GameObject obj in objetosLavables)
         {
-            if (encontrados.Contains(obj))
+            if (objetosEnBandeja.Contains(obj))
             {
-                GameObject encontrado = GameObject.Find(obj);
-                instrumentos componente = encontrado.GetComponent<instrumentos>();
-
+                instrumentos componente = obj.GetComponent<instrumentos>();
                 if (componente != null && componente.estaLimpio)
                 {
                     puntaje += 2f;
@@ -101,9 +90,9 @@ public class validarBandeja : MonoBehaviour
         }
 
         // Validar objetos no lavables
-        foreach (string obj in objetosNoLavables)
+        foreach (GameObject obj in objetosNoLavables)
         {
-            if (encontrados.Contains(obj))
+            if (objetosEnBandeja.Contains(obj))
             {
                 puntaje += 1f;
             }
@@ -114,7 +103,7 @@ public class validarBandeja : MonoBehaviour
         }
 
         // Penalizar objetos incorrectos
-        foreach (string obj in objetosEnBandeja)
+        foreach (GameObject obj in objetosEnBandeja)
         {
             if (!EsObjetoEsperado(obj))
             {
@@ -122,7 +111,7 @@ public class validarBandeja : MonoBehaviour
             }
         }
 
-        Debug.Log("Tiempo terminado");
+        Debug.Log(" Tiempo terminado");
         Debug.Log(" Puntaje final: " + puntaje);
     }
 }
