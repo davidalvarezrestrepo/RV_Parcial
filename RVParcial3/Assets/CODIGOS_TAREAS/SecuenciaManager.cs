@@ -4,33 +4,54 @@ using UnityEngine;
 
 public class SecuenciaManager : MonoBehaviour
 {
-    private List<string> pasosCorrectos = new List<string>
-    {
-        "LavarseManos", "PonerseGuantes", "PonerseTapabocas", "AbrirInventario",
-        "LavarObjetos", "ColocarObjetosBandeja"
-    };
+    public GameObject corrienteAgua;
+    public AudioSource sonidoAgua;
 
-    private int pasoActual = 0;
-    public int Puntaje { get; private set; }
+    private bool aguaActiva = false;
+    private bool bloqueoTemporal = false;
 
-    public void ValidarPaso(string paso)
+    public string[] tagsActivadores = { "ManoIzquierda", "ManoDerecha" };
+
+    public float cooldown = 1f;
+
+    private void Start()
     {
-        if (paso == pasosCorrectos[pasoActual])
+        corrienteAgua.SetActive(false);
+        if (sonidoAgua.isPlaying) sonidoAgua.Stop();
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (bloqueoTemporal) return;
+
+        foreach (string tag in tagsActivadores)
         {
-            Debug.Log($" Paso correcto: {paso}");
-            pasoActual++;
-            Puntaje += 10;
+            if (other.CompareTag(tag))
+            {
+                StartCoroutine(AlternarAguaConCooldown());
+                break;
+            }
+        }
+    }
+    IEnumerator AlternarAguaConCooldown()
+    {
+        bloqueoTemporal = true;
+
+        aguaActiva = !aguaActiva;
+        corrienteAgua.SetActive(aguaActiva);
+
+        if (aguaActiva)
+        {
+            sonidoAgua.Play();
+            Debug.Log(" Agua activada");
         }
         else
         {
-            Debug.Log($" Paso fuera de orden: {paso}");
+            sonidoAgua.Stop();
+            Debug.Log("Agua desactivada");
         }
-    }
-
-    public void ReiniciarSecuencia()
-    {
-        pasoActual = 0;
-        Puntaje = 0;
+        yield return new WaitForSeconds(cooldown);
+        bloqueoTemporal = false;
     }
 }
 
