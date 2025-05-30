@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ponerGuantes : MonoBehaviour
 {
     public Material texturaGuante;
     public SkinnedMeshRenderer manoIzquierdaRenderer;
     public SkinnedMeshRenderer manoDerechaRenderer;
+
+    public Text estado;
 
     public enum ManoAsignada { Izquierda, Derecha }
     public ManoAsignada manoAsignada;
@@ -29,7 +32,15 @@ public class ponerGuantes : MonoBehaviour
         {
             renderer.material = texturaGuante;
             gameObject.SetActive(false);
+            StartCoroutine(MostrarEstadoTemporal("Guante puesto", 3f));
         }
+    }
+
+    private IEnumerator MostrarEstadoTemporal(string mensaje, float duracion)
+    {
+        estado.text = mensaje;
+        yield return new WaitForSeconds(duracion);
+        estado.text = "";
     }
 
 }
