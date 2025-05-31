@@ -19,6 +19,9 @@ public class validarBandeja : MonoBehaviour
     private bool tiempoTerminado = false;
 
 
+    public MoveSurgeonHand moveHand;
+
+
     private void Start()
     {
         StartCoroutine(ContadorRegresivo());
@@ -43,6 +46,15 @@ public class validarBandeja : MonoBehaviour
         tiempoTerminado = true;
         textoTiempo.text = "¡Tiempo terminado!";
         EvaluarPuntaje();
+
+        if (moveHand != null)
+        {
+            moveHand.isToggled = true;
+        }
+        else
+        {
+            Debug.LogWarning("No se asignó el script MoveSurgeonHand en el Inspector.");
+        }
     }
 
     private void OnTriggerEnter(Collider other)

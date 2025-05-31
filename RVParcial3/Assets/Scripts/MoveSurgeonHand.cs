@@ -16,7 +16,7 @@ public class MoveSurgeonHand : MonoBehaviour
         private Vector3 targetLocalPosition = new Vector3(0.70599997f, 1.18400002f, -0.224999994f);
         private Quaternion targetLocalRotation = new Quaternion(-0.550710917f, -0.449380666f, -0.475682467f, 0.518170536f);
 
-        private bool isToggled = false;
+        public bool isToggled = false;
 
         void Start()
         {

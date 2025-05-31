@@ -1930,6 +1930,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3706431252879977571, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8489251218927912534, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
       propertyPath: m_Name
       value: Surgeon
@@ -5913,6 +5917,17 @@ Transform:
   - {fileID: 2038698951}
   m_Father: {fileID: 1820941190}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1606232135 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4152066848872120271, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
+  m_PrefabInstance: {fileID: 766617464}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5569c4336c0f6d54eb75ecdf20527a6f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1614002840 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5686134208185362930, guid: 1fd3a7c43c8190f4d8c167ebde694364, type: 3}
@@ -7061,7 +7076,7 @@ Transform:
   m_GameObject: {fileID: 1820941187}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0.7235374, z: -0, w: -0.6902852}
-  m_LocalPosition: {x: -3.32, y: 0, z: 1.26}
+  m_LocalPosition: {x: 8.699, y: 0, z: -6.681}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -12521,7 +12536,6 @@ Transform:
   - {fileID: 302145220827484010}
   - {fileID: 2639622483848453900}
   - {fileID: 1219478807669425709}
-  - {fileID: 3425760696091985518}
   - {fileID: 6716451131926651833}
   - {fileID: 1900574461}
   - {fileID: 1160328238}
@@ -27907,12 +27921,12 @@ Transform:
   m_GameObject: {fileID: 621785687402200789}
   serializedVersion: 2
   m_LocalRotation: {x: -0.4805851, y: 0.5186888, z: 0.5186876, w: 0.4805862}
-  m_LocalPosition: {x: 3.85, y: 1.28, z: -4.92}
-  m_LocalScale: {x: 121.21001, y: 117.4, z: 100}
+  m_LocalPosition: {x: 4.5905576, y: 0.8299999, z: -5.5699997}
+  m_LocalScale: {x: 121.210014, y: 117.40001, z: 100}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8574448362665114146}
-  m_Father: {fileID: 543450651597382490}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &3429784381594692224
 Transform:
@@ -37315,6 +37329,10 @@ PrefabInstance:
     - target: {fileID: 3706431252879977571, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
       propertyPath: m_Name
       value: Surgeon
+      objectReference: {fileID: 0}
+    - target: {fileID: 3706431252879977571, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6840723332816932960, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
       propertyPath: m_LocalPosition.x
@@ -56859,6 +56877,7 @@ MonoBehaviour:
   - {fileID: 2706792730273134495}
   textoTiempo: {fileID: 1728119108}
   textoPuntaje: {fileID: 2020625125}
+  moveHand: {fileID: 1606232135}
 --- !u!65 &8574448362665114149
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -60437,6 +60456,7 @@ SceneRoots:
   - {fileID: 1277085805}
   - {fileID: 4605080454396686860}
   - {fileID: 1347077623670981282}
+  - {fileID: 3425760696091985518}
   - {fileID: 1595924557680013601}
   - {fileID: 1985319045}
   - {fileID: 1190480061}
