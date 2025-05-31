@@ -9,6 +9,7 @@ TagManager:
   - ManoIzquierda
   - ManoDerecha
   - agua
+  - Instrumento
   layers:
   - Default
   - TransparentFX
