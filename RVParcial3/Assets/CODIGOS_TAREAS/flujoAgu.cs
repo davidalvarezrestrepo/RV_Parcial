@@ -15,6 +15,8 @@ public class flujoAgu : MonoBehaviour
     private float tiempoDentroIzquierda = 0f;
     private float tiempoDentroDerecha = 0f;
 
+    public int puntaje;
+
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("ManoIzquierda") && !manoIzquierdaLimpia)
@@ -23,6 +25,7 @@ public class flujoAgu : MonoBehaviour
             if (tiempoDentroIzquierda >= tiempoLavadoRequerido)
             {
                 manoIzquierdaLimpia = true;
+                puntaje += 3;
                 Debug.Log(" Mano izquierda lavada correctamente");
                 StartCoroutine(MostrarEstadoTemporal(" Mano izquierda lavada correctamente", 2f));
             }
@@ -34,6 +37,7 @@ public class flujoAgu : MonoBehaviour
             if (tiempoDentroDerecha >= tiempoLavadoRequerido)
             {
                 manoDerechaLimpia = true;
+                puntaje += 3;
                 Debug.Log("Mano derecha lavada correctamente");
                 StartCoroutine(MostrarEstadoTemporal("Mano derecha lavada correctamente", 2f));
             }

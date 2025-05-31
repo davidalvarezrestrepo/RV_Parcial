@@ -11,6 +11,7 @@ public class instrumentos : MonoBehaviour
 
     public Text estado;
 
+    public int puntaje;
     private void Start()
     {
         nombreObjeto = gameObject.name;
@@ -23,7 +24,8 @@ public class instrumentos : MonoBehaviour
         {
             if (!estaLimpio)
             {
-                estaLimpio = true;         
+                estaLimpio = true;
+                puntaje += 1;
                 audioLimpio.Play();
                 Debug.Log(" Objeto limpiado: " + nombreObjeto);
                 StartCoroutine(MostrarEstadoTemporal("Objeto limpiado: " + nombreObjeto, 6f));

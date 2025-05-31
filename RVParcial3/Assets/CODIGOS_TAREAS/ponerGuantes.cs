@@ -11,6 +11,8 @@ public class ponerGuantes : MonoBehaviour
 
     public Text estado;
 
+    public int puntaje;
+
     public enum ManoAsignada { Izquierda, Derecha }
     public ManoAsignada manoAsignada;
 
@@ -19,10 +21,13 @@ public class ponerGuantes : MonoBehaviour
         if (manoAsignada == ManoAsignada.Izquierda && other.CompareTag("ManoIzquierda"))
         {
             AplicarGuante(manoIzquierdaRenderer, "izquierda");
+            puntaje += 3;
+
         }
         else if (manoAsignada == ManoAsignada.Derecha && other.CompareTag("ManoDerecha"))
         {
             AplicarGuante(manoDerechaRenderer, "derecha");
+            puntaje += 3;
         }
     }
 

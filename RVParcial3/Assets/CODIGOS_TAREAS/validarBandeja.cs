@@ -13,7 +13,7 @@ public class validarBandeja : MonoBehaviour
     private HashSet<GameObject> objetosEnBandeja = new HashSet<GameObject>();
     public Text textoTiempo;
 
-    public Text textoPuntaje;     // Texto para mostrar el puntaje
+    public Text textoPuntaje;     
 
     private float tiempoRestante = 40f;
     private bool tiempoTerminado = false;
@@ -44,7 +44,7 @@ public class validarBandeja : MonoBehaviour
         }
 
         tiempoTerminado = true;
-        textoTiempo.text = "¡Tiempo terminado!";
+        textoTiempo.text = "¡Empieza cirugía!";
         EvaluarPuntaje();
 
         if (moveHand != null)
