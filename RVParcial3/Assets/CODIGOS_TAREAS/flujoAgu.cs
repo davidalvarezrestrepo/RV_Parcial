@@ -17,6 +17,11 @@ public class flujoAgu : MonoBehaviour
 
     public int puntaje;
 
+
+    private void Start()
+    {
+        PuntosManager.CargarPuntaje();
+    }
     private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("ManoIzquierda") && !manoIzquierdaLimpia)
@@ -26,6 +31,7 @@ public class flujoAgu : MonoBehaviour
             {
                 manoIzquierdaLimpia = true;
                 puntaje += 3;
+                PuntosManager.AgregarPuntos(puntaje);
                 Debug.Log(" Mano izquierda lavada correctamente");
                 StartCoroutine(MostrarEstadoTemporal(" Mano izquierda lavada correctamente", 2f));
             }
@@ -38,6 +44,7 @@ public class flujoAgu : MonoBehaviour
             {
                 manoDerechaLimpia = true;
                 puntaje += 3;
+                PuntosManager.AgregarPuntos(puntaje);
                 Debug.Log("Mano derecha lavada correctamente");
                 StartCoroutine(MostrarEstadoTemporal("Mano derecha lavada correctamente", 2f));
             }

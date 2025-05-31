@@ -15,19 +15,24 @@ public class ponerGuantes : MonoBehaviour
 
     public enum ManoAsignada { Izquierda, Derecha }
     public ManoAsignada manoAsignada;
-
+    private void Start()
+    {
+        PuntosManager.CargarPuntaje();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (manoAsignada == ManoAsignada.Izquierda && other.CompareTag("ManoIzquierda"))
         {
             AplicarGuante(manoIzquierdaRenderer, "izquierda");
             puntaje += 3;
+            PuntosManager.AgregarPuntos(puntaje);
 
         }
         else if (manoAsignada == ManoAsignada.Derecha && other.CompareTag("ManoDerecha"))
         {
             AplicarGuante(manoDerechaRenderer, "derecha");
             puntaje += 3;
+            PuntosManager.AgregarPuntos(puntaje);
         }
     }
 

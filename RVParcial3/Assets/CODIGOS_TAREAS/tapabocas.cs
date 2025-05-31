@@ -7,6 +7,11 @@ public class tapabocas : MonoBehaviour
 {
     public Text estado;
     public int puntaje;
+
+    private void Start()
+    {
+        PuntosManager.CargarPuntaje();
+    }
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -14,6 +19,7 @@ public class tapabocas : MonoBehaviour
             Destroy(gameObject);
             estado.text = "tapabocas puesto";
             puntaje = 5;
+            PuntosManager.AgregarPuntos(puntaje);
 
 
         }

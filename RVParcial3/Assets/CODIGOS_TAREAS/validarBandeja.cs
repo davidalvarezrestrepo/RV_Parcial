@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class validarBandeja : MonoBehaviour
 {
     public GameObject[] objetosLavables;
-    private float puntaje = 0f;
+    private int puntaje = 0;
     public GameObject[] objetosNoLavables;
 
     // Lista de objetos actualmente dentro de la bandeja
@@ -25,6 +25,7 @@ public class validarBandeja : MonoBehaviour
     private void Start()
     {
         StartCoroutine(ContadorRegresivo());
+        PuntosManager.CargarPuntaje();
     }
 
     private void Update()
@@ -88,7 +89,7 @@ public class validarBandeja : MonoBehaviour
 
     public void EvaluarPuntaje()
     {
-        puntaje = 0f;
+        puntaje = 0;
 
         HashSet<GameObject> encontrados = new HashSet<GameObject>(objetosEnBandeja);
 
@@ -100,17 +101,18 @@ public class validarBandeja : MonoBehaviour
                 instrumentos componente = obj.GetComponent<instrumentos>();
                 if (componente != null && componente.estaLimpio)
                 {
-                    puntaje += 2f; // Correcto y limpio
+                    puntaje += 2; // Correcto y limpio
+                    PuntosManager.AgregarPuntos(puntaje);
                 }
                 else
                 {
-                    puntaje -= 1f; // Estaba pero sucio
+                    puntaje -= 1; // Estaba pero sucio
                     Debug.Log(" Objeto lavable no estaba limpio: " + obj.name);
                 }
             }
             else
             {
-                puntaje -= 2f; // Faltó
+                puntaje -= 2; // Faltó
                 Debug.Log(" Objeto lavable no fue ingresado: " + obj.name);
             }
         }
@@ -120,11 +122,11 @@ public class validarBandeja : MonoBehaviour
         {
             if (encontrados.Contains(obj))
             {
-                puntaje += 1f; // Correcto
+                puntaje += 1; // Correcto
             }
             else
             {
-                puntaje -= 1f; // Faltó
+                puntaje -= 1; // Faltó
                 Debug.Log(" Objeto no lavable no fue ingresado: " + obj.name);
             }
         }

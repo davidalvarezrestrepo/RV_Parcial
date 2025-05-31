@@ -15,8 +15,10 @@ public class instrumentos : MonoBehaviour
     private void Start()
     {
         nombreObjeto = gameObject.name;
-       
+        PuntosManager.CargarPuntaje();
+
     }
+
 
     private void OnTriggerEnter(Collider other)
     {
@@ -26,6 +28,7 @@ public class instrumentos : MonoBehaviour
             {
                 estaLimpio = true;
                 puntaje += 1;
+                PuntosManager.AgregarPuntos(puntaje);
                 audioLimpio.Play();
                 Debug.Log(" Objeto limpiado: " + nombreObjeto);
                 StartCoroutine(MostrarEstadoTemporal("Objeto limpiado: " + nombreObjeto, 6f));
