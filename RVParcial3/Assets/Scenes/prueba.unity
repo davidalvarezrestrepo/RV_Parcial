@@ -542,6 +542,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2038698951}
     m_Modifications:
+    - target: {fileID: 664489801923019586, guid: 2fd3e07afe5b461490fb8e314976b1b0, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6059725000919627127, guid: 2fd3e07afe5b461490fb8e314976b1b0, type: 3}
       propertyPath: m_Radius
       value: 0.05
@@ -1690,6 +1694,9 @@ Transform:
   - {fileID: 1983260232119328099}
   - {fileID: 3949391822901884079}
   - {fileID: 6207139790206256978}
+  - {fileID: 1125291740343393440}
+  - {fileID: 4947455337813940135}
+  - {fileID: 977271755556322495}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &705507993
@@ -1880,7 +1887,118 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6648280616550809988, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1831770381}
+    - targetCorrespondingSourceObject: {fileID: 4055664236089043353, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 766617468}
+    - targetCorrespondingSourceObject: {fileID: 4055664236089043353, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 766617467}
+    - targetCorrespondingSourceObject: {fileID: 4055664236089043353, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 766617466}
   m_SourcePrefab: {fileID: 100100000, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
+--- !u!1 &766617465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4055664236089043353, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
+  m_PrefabInstance: {fileID: 766617464}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &766617466
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766617465}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.19948922, y: 0.28297532, z: 0.209456}
+  m_Center: {x: 0.011400017, y: 0.04058335, z: 0.03686764}
+--- !u!114 &766617467
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766617465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ec05b0d6ccff6c4bbfcb6d0aa2b5ba8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSurgeonHand: {fileID: 1606232135}
+  tiempoParaBajar: 2
+  tiempoReactivar: 7
+  puntaje: 0
+--- !u!114 &766617468
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 766617465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 60523e0647cc6ab43acc73cb266a32a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_InteractionManager: {fileID: 0}
+  m_InteractionLayerMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_InteractionLayers:
+    m_Bits: 4
+  m_AttachTransform: {fileID: 0}
+  m_KeepSelectedTargetValid: 1
+  m_DisableVisualsWhenBlockedInGroup: 1
+  m_StartingSelectedInteractable: {fileID: 0}
+  m_StartingTargetFilter: {fileID: 0}
+  m_HoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_HoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_SelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_StartingHoverFilters: []
+  m_StartingSelectFilters: []
+  m_OnHoverEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnHoverExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectEntered:
+    m_PersistentCalls:
+      m_Calls: []
+  m_OnSelectExited:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ShowInteractableHoverMeshes: 1
+  m_InteractableHoverMeshMaterial: {fileID: 0}
+  m_InteractableCantHoverMeshMaterial: {fileID: 0}
+  m_SocketActive: 1
+  m_InteractableHoverScale: 1
+  m_RecycleDelayTime: 1
+  m_HoverSocketSnapping: 0
+  m_SocketSnappingRadius: 0.1
+  m_SocketScaleMode: 0
+  m_FixedScale: {x: 1, y: 1, z: 1}
+  m_TargetBoundsSize: {x: 1, y: 1, z: 1}
 --- !u!1 &773992654
 GameObject:
   m_ObjectHideFlags: 0
@@ -3951,6 +4069,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 809503434}
     m_Modifications:
+    - target: {fileID: 664489801923019586, guid: 2fd3e07afe5b461490fb8e314976b1b0, type: 3}
+      propertyPath: m_InteractionLayers.m_Bits
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 6059725000919627127, guid: 2fd3e07afe5b461490fb8e314976b1b0, type: 3}
       propertyPath: m_Radius
       value: 0.05
@@ -4336,7 +4458,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -9491,7 +9613,7 @@ GameObject:
   - component: {fileID: 1983260232119328100}
   m_Layer: 0
   m_Name: 'Tijera de Mayo curva '
-  m_TagString: Untagged
+  m_TagString: herramientas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -9802,7 +9924,7 @@ GameObject:
   - component: {fileID: 3949391822901884080}
   m_Layer: 0
   m_Name: "Aguja\_curva"
-  m_TagString: Untagged
+  m_TagString: herramientas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -10488,9 +10610,7 @@ Transform:
   m_LocalPosition: {x: 8.91, y: 0.010899782, z: 4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1125291740343393440}
-  - {fileID: 977271755556322495}
+  m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &508102656041733039
@@ -11675,7 +11795,7 @@ GameObject:
   - component: {fileID: 4091223848848767744}
   m_Layer: 0
   m_Name: 'Separador tipo Separador Senn '
-  m_TagString: Untagged
+  m_TagString: herramientas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13352,7 +13472,7 @@ GameObject:
   - component: {fileID: 876933054992595962}
   m_Layer: 0
   m_Name: 'Tijera Potts-Smith curva grande '
-  m_TagString: Untagged
+  m_TagString: herramientas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13414,7 +13534,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -13873,7 +13993,7 @@ GameObject:
   - component: {fileID: 919132149052766860}
   m_Layer: 0
   m_Name: "bistur\xED con hoja 10 "
-  m_TagString: Untagged
+  m_TagString: herramientas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -13935,7 +14055,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -14349,13 +14469,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5243555311326830206}
   serializedVersion: 2
-  m_LocalRotation: {x: 1, y: 0, z: -0, w: 0.00000019470718}
-  m_LocalPosition: {x: -7.483, y: 1.055, z: -15.732}
+  m_LocalRotation: {x: 1, y: -0, z: -0, w: 0.00000019470718}
+  m_LocalPosition: {x: -3.6108499, y: -0.15620339, z: -2.8839712}
   m_LocalScale: {x: 195.60472, y: 1956.0472, z: 97.80236}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1383015890}
-  m_Father: {fileID: 501576638100142434}
+  m_Father: {fileID: 688985819}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &979790287725455820
 MeshFilter:
@@ -15060,15 +15180,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2706792730273134495}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071067}
-  m_LocalPosition: {x: -9.53, y: 1.119, z: -7.715}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071067}
+  m_LocalPosition: {x: -5.65785, y: -0.09220338, z: 5.133029}
   m_LocalScale: {x: 100, y: 100.00002, z: 100.00002}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1020753547232012513}
   - {fileID: 1749471664820980561}
   - {fileID: 993316057}
-  m_Father: {fileID: 501576638100142434}
+  m_Father: {fileID: 688985819}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1127473026314267051
 GameObject:
@@ -17284,7 +17404,7 @@ GameObject:
   - component: {fileID: 8002557561005669327}
   m_Layer: 0
   m_Name: desfribilador
-  m_TagString: Untagged
+  m_TagString: herramientas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -19805,7 +19925,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -23388,7 +23508,7 @@ GameObject:
   - component: {fileID: 5948369213689797058}
   m_Layer: 0
   m_Name: hilo
-  m_TagString: Untagged
+  m_TagString: herramientas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27125,7 +27245,7 @@ GameObject:
   - component: {fileID: 8965319739218524909}
   m_Layer: 0
   m_Name: 'Copa de muestra '
-  m_TagString: Untagged
+  m_TagString: herramientas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27799,7 +27919,7 @@ GameObject:
   - component: {fileID: 3542530260796543009}
   m_Layer: 0
   m_Name: 'Separador tipo Farabeuf '
-  m_TagString: Untagged
+  m_TagString: herramientas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27860,7 +27980,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -30525,7 +30645,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -31764,7 +31884,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -36259,12 +36379,12 @@ Transform:
   m_GameObject: {fileID: 3411323594961330529}
   serializedVersion: 2
   m_LocalRotation: {x: -0.00000003774895, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 5.02, y: 1.29, z: -9.302}
+  m_LocalPosition: {x: -0.017849922, y: 0.06789684, z: -0.4539709}
   m_LocalScale: {x: 209.59999, y: 209.59999, z: 209.59999}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1284240224}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 688985819}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4948863599795143716
 Transform:
@@ -37757,7 +37877,7 @@ GameObject:
   - component: {fileID: 7107267895283749951}
   m_Layer: 0
   m_Name: 'Gasas '
-  m_TagString: Untagged
+  m_TagString: herramientas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -41921,7 +42041,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -42910,7 +43030,7 @@ GameObject:
   - component: {fileID: 6091039827354041011}
   m_Layer: 0
   m_Name: 'Tijera de Metzenbaum larga  '
-  m_TagString: Untagged
+  m_TagString: herramientas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -42972,7 +43092,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -47086,7 +47206,7 @@ GameObject:
   - component: {fileID: 6820342450956704788}
   m_Layer: 0
   m_Name: "pinza de disecci\xF3n "
-  m_TagString: Untagged
+  m_TagString: herramientas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47148,7 +47268,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -48655,7 +48775,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -53485,7 +53605,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -57369,7 +57489,7 @@ GameObject:
   - component: {fileID: 8729226835994255998}
   m_Layer: 0
   m_Name: 'Pinza de Kocher curva '
-  m_TagString: Untagged
+  m_TagString: herramientas
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57431,7 +57551,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4294967295
   m_InteractionLayers:
-    m_Bits: 1
+    m_Bits: 4
   m_DistanceCalculationMode: 1
   m_SelectMode: 0
   m_FocusMode: 1
@@ -59973,7 +60093,6 @@ SceneRoots:
   - {fileID: 688985819}
   - {fileID: 4607214564311567554}
   - {fileID: 501576638100142434}
-  - {fileID: 4947455337813940135}
   - {fileID: 163917489}
   - {fileID: 1835098573}
   - {fileID: 432585950}
