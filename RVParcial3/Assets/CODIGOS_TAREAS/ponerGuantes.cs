@@ -31,7 +31,7 @@ public class ponerGuantes : MonoBehaviour
         if (renderer != null && texturaGuante != null)
         {
             renderer.material = texturaGuante;
-            gameObject.SetActive(false);
+            
             StartCoroutine(MostrarEstadoTemporal("Guante puesto", 3f));
         }
     }
@@ -39,6 +39,7 @@ public class ponerGuantes : MonoBehaviour
     private IEnumerator MostrarEstadoTemporal(string mensaje, float duracion)
     {
         estado.text = mensaje;
+        gameObject.SetActive(false);
         yield return new WaitForSeconds(duracion);
         estado.text = "";
     }
