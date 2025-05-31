@@ -4320,6 +4320,7 @@ MonoBehaviour:
   manoDerechaLimpia: 0
   estado: {fileID: 2020625125}
   tiempoLavadoRequerido: 2
+  puntaje: 0
 --- !u!54 &1406222418
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7049,6 +7050,7 @@ MonoBehaviour:
   manoDerechaLimpia: 0
   estado: {fileID: 0}
   tiempoLavadoRequerido: 2
+  puntaje: 0
 --- !u!136 &2116149618
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -34695,67 +34697,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!1001 &5020354599113621490
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 3706431252879977571, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
-      propertyPath: m_Name
-      value: Surgeon
-      objectReference: {fileID: 0}
-    - target: {fileID: 3706431252879977571, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6840723332816932960, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 8.59
-      objectReference: {fileID: 0}
-    - target: {fileID: 6840723332816932960, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6840723332816932960, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -10.119
-      objectReference: {fileID: 0}
-    - target: {fileID: 6840723332816932960, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.6515852
-      objectReference: {fileID: 0}
-    - target: {fileID: 6840723332816932960, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6840723332816932960, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0.7585755
-      objectReference: {fileID: 0}
-    - target: {fileID: 6840723332816932960, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6840723332816932960, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6840723332816932960, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: -98.678
-      objectReference: {fileID: 0}
-    - target: {fileID: 6840723332816932960, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: b2f21be9380d2fb48b1ab8fdb75fe402, type: 3}
 --- !u!4 &5036571846648783755
 Transform:
   m_ObjectHideFlags: 0
@@ -54894,6 +54835,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   estado: {fileID: 2020625125}
+  puntaje: 0
 --- !u!33 &8687723539958658029
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -55361,6 +55303,7 @@ MonoBehaviour:
   manoIzquierdaRenderer: {fileID: 43843408}
   manoDerechaRenderer: {fileID: 2096867835}
   estado: {fileID: 2020625125}
+  puntaje: 0
   manoAsignada: 1
 --- !u!54 &8794025685877851303
 Rigidbody:
@@ -55953,6 +55896,7 @@ MonoBehaviour:
   manoIzquierdaRenderer: {fileID: 43843408}
   manoDerechaRenderer: {fileID: 2096867835}
   estado: {fileID: 2020625125}
+  puntaje: 0
   manoAsignada: 0
 --- !u!135 &8917721798119483324
 SphereCollider:
@@ -57398,6 +57342,5 @@ SceneRoots:
   - {fileID: 4607214564311567554}
   - {fileID: 501576638100142434}
   - {fileID: 4947455337813940135}
-  - {fileID: 5020354599113621490}
   - {fileID: 163917489}
   - {fileID: 1835098573}

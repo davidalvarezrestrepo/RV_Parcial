@@ -107,12 +107,14 @@ public class validarBandeja : MonoBehaviour
                 else
                 {
                     puntaje -= 1; // Estaba pero sucio
+                    PuntosManager.AgregarPuntos(puntaje);
                     Debug.Log(" Objeto lavable no estaba limpio: " + obj.name);
                 }
             }
             else
             {
                 puntaje -= 2; // Faltó
+                PuntosManager.AgregarPuntos(puntaje);
                 Debug.Log(" Objeto lavable no fue ingresado: " + obj.name);
             }
         }
@@ -123,10 +125,12 @@ public class validarBandeja : MonoBehaviour
             if (encontrados.Contains(obj)) 
             {
                 puntaje += 1; // Correcto
+                PuntosManager.AgregarPuntos(puntaje);
             }
             else
             {
                 puntaje -= 1; // Faltó
+                PuntosManager.AgregarPuntos(puntaje);
                 Debug.Log(" Objeto no lavable no fue ingresado: " + obj.name);
             }
         }
