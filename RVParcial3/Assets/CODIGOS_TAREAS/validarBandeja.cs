@@ -120,7 +120,7 @@ public class validarBandeja : MonoBehaviour
         // Evaluar objetos no lavables
         foreach (GameObject obj in objetosNoLavables)
         {
-            if (encontrados.Contains(obj))
+            if (encontrados.Contains(obj)) 
             {
                 puntaje += 1; // Correcto
             }
